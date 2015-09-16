@@ -1,0 +1,58 @@
+###############################################################################
+#
+#                             JMX SOAP Connector Client Properties File
+#
+#  This file contains properties that are used by the JMX SOAP Connector Client
+#  of the WebSphere Application Server product. SOAP Connector executes on WebSphere 
+#  java servers and client systems with java applications that access WebSphere servers.
+#
+#  ** Encoding Passwords in this File **
+#
+#  The PropFilePasswordEncoder utility may be used to encode passwords in a
+#  properties file. To edit an encoded password, replace the whole password
+#  string (including the encoding tag {...}) with the new password and then
+#  encode the password with the PropFilePasswordEncoder utility. Refer to
+#  product documentation for additional information.
+#
+###############################################################################
+
+#------------------------------------------------------------------------------
+# SOAP Client Security Enablement
+#
+# - security enabled status  ( false[default], true  )
+#------------------------------------------------------------------------------
+com.ibm.SOAP.securityEnabled=false
+
+com.ibm.SOAP.loginUserid=
+com.ibm.SOAP.loginPassword=
+
+#------------------------------------------------------------------------------
+# SOAP Login Prompt
+#
+# The auto prompting will happen only if all of the following are met:
+#
+# - Running from a SOAP client
+# - Server is reachable and server security is enabled
+# - Username and password are not provided either on command line or in this
+#   file
+# - com.ibm.SOAP.loginSource below is set to either "stdin" or "prompt"
+#
+#   stdin: prompt in command window
+#   prompt: GUI dialog box; falls back to stdin if GUI not allowed
+#
+#   (So to disable auto prompting, set loginSource to nothing)
+#------------------------------------------------------------------------------
+com.ibm.SOAP.loginSource=prompt
+
+#------------------------------------------------------------------------------
+# SOAP Request Timeout 
+#
+# - timeout (specified in seconds [default 180], 0 implies no timeout)
+#
+#------------------------------------------------------------------------------
+com.ibm.SOAP.requestTimeout=180
+
+#------------------------------------------------------------------------------
+# SSL configuration alias referenced in ssl.client.props
+#------------------------------------------------------------------------------
+com.ibm.ssl.alias=DefaultSSLSettings

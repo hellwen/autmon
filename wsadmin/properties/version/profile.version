@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<profile>
+  <id>dmgr</id>
+  <version>6.1.0.25</version>
+  <build-info
+    date="6/1/09"
+    level="cf250922.06"/>
+</profile>

@@ -1,0 +1,92 @@
+#-------------------------------------------------------------------------
+# Global SSL Properties (applies to entire process)
+#-------------------------------------------------------------------------
+com.ibm.ssl.defaultAlias=DefaultSSLSettings
+com.ibm.ssl.performURLHostNameVerification=false
+com.ibm.ssl.validationEnabled=false
+com.ibm.security.useFIPS=false
+user.root=/usr/IBM/WebSphere/AppServer/profiles/Dmgr01
+
+#-------------------------------------------------------------------------
+# Default Self-Signed Certificate Properties
+# These properties are used to create a keystore when it does not exist with
+# a self-signed certificate.  The properties com.ibm.ssl.keyStoreFileBased=true
+# and com.ibm.ssl.trustStoreFileBased=true must be set to indicate a file-based
+# keystore and truststore before they are created.
+#-------------------------------------------------------------------------
+com.ibm.ssl.defaultCertReqAlias=default
+com.ibm.ssl.defaultCertReqSubjectDN=cn=${hostname},o=IBM,c=US
+com.ibm.ssl.defaultCertReqDays=365
+com.ibm.ssl.defaultCertReqKeySize=1024
+
+#-------------------------------------------------------------------------
+# The following are sets of SSL configurations that can be specified for
+# use by various protocols, components, and applications.
+# Each new SSL configuration should begin with the com.ibm.ssl.alias property.
+#-------------------------------------------------------------------------
+
+#-------------------------------------------------------------------------
+# This SSL configuration is used for all client SSL connections, by default
+#-------------------------------------------------------------------------
+com.ibm.ssl.alias=DefaultSSLSettings
+com.ibm.ssl.protocol=SSL_TLS
+com.ibm.ssl.securityLevel=HIGH
+com.ibm.ssl.trustManager=IbmX509
+com.ibm.ssl.keyManager=IbmX509
+com.ibm.ssl.contextProvider=IBMJSSE2
+com.ibm.ssl.enableSignerExchangePrompt=true
+#com.ibm.ssl.keyStoreClientAlias=default
+#com.ibm.ssl.customTrustManagers=
+#com.ibm.ssl.customKeyManager=
+#com.ibm.ssl.dynamicSelectionInfo=
+#com.ibm.ssl.enabledCipherSuites=
+
+# KeyStore information
+com.ibm.ssl.keyStoreName=ClientDefaultKeyStore
+com.ibm.ssl.keyStore=${user.root}/etc/key.p12
+com.ibm.ssl.keyStorePassword={xor}CDo9Hgw=
+com.ibm.ssl.keyStoreType=PKCS12
+com.ibm.ssl.keyStoreProvider=IBMJCE
+com.ibm.ssl.keyStoreFileBased=true
+
+# TrustStore information
+com.ibm.ssl.trustStoreName=ClientDefaultTrustStore
+com.ibm.ssl.trustStore=${user.root}/etc/trust.p12
+com.ibm.ssl.trustStorePassword={xor}CDo9Hgw=
+com.ibm.ssl.trustStoreType=PKCS12
+com.ibm.ssl.trustStoreProvider=IBMJCE
+com.ibm.ssl.trustStoreFileBased=true
+
+#-------------------------------------------------------------------------
+# Another SSL configuration (this is a template, uncomment and modify)
+# You can configure the dynamicSelectionInfo OR reference this alias
+# from another protocol (e.g., soap.client.props or sas.client.props)
+#-------------------------------------------------------------------------
+#com.ibm.ssl.alias=AnotherSSLSettings
+#com.ibm.ssl.protocol=SSL_TLS
+#com.ibm.ssl.securityLevel=HIGH
+#com.ibm.ssl.trustManager=IbmX509
+#com.ibm.ssl.keyManager=IbmX509
+#com.ibm.ssl.contextProvider=IBMJSSE2
+#com.ibm.ssl.enableSignerExchangePrompt=true
+#com.ibm.ssl.keyStoreClientAlias=default
+#com.ibm.ssl.customTrustManagers=
+#com.ibm.ssl.customKeyManager=
+#com.ibm.ssl.dynamicSelectionInfo=
+#com.ibm.ssl.enabledCipherSuites=
+
+# KeyStore information
+#com.ibm.ssl.keyStoreName=AnotherKeyStore
+#com.ibm.ssl.keyStore=${user.root}/etc/key.p12
+#com.ibm.ssl.keyStorePassword={xor}CDo9Hgw=
+#com.ibm.ssl.keyStoreType=PKCS12
+#com.ibm.ssl.keyStoreProvider=IBMJCE
+#com.ibm.ssl.keyStoreFileBased=true
+
+# TrustStore information
+#com.ibm.ssl.trustStoreName=AnotherTrustStore
+#com.ibm.ssl.trustStore=${user.root}/etc/trust.p12
+#com.ibm.ssl.trustStorePassword={xor}CDo9Hgw=
+#com.ibm.ssl.trustStoreType=PKCS12
+#com.ibm.ssl.trustStoreProvider=IBMJCE
+#com.ibm.ssl.trustStoreFileBased=true
