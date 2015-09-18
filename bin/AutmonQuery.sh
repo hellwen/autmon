@@ -9,7 +9,8 @@ else
     location="`pwd`/${0%\/*}"
 fi
 
-pid_f="${location}/log/autmon.pid"
+autmon_path="${location}"
+pid_f="${autmon_path}/log/autmon.pid"
 
 # if running
 if [ -f $pid_f ]; then

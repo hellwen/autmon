@@ -28,3 +28,4 @@ fi
 cd "${autmon_path}/bin"
 nohup ./autmon --skip-fork &
 cd ..
+
